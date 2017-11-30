@@ -25,4 +25,7 @@ IMAGE_INSTALL += " \
 	lmsensors-sensorsdetect \
 	lmsensors-fancontrol \
 	bootstrap-ansible \
+  tmux \
+  gdb \
+  gdbserver \
 "
