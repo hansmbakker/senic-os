@@ -83,6 +83,5 @@ IMAGE_INSTALL = " \
   senic-hub-button \
   e2fsprogs-resize2fs \
   parted \
-  u-boot-fw-utils \
   btattach-systemd \
 "

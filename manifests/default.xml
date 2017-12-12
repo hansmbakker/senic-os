@@ -3,15 +3,7 @@
 	<remote name="oe" fetch="git://git.openembedded.org/" />
 	<remote name="github" fetch="git://github.com/" />
 
-	<!-- commit frozen from branch Morty  -->
-	<project path="oe" name="openembedded-core" remote="oe" revision="0bc03289b775fefcb7f03e5463c79e4f96cd0b12" />
-	<project name="meta-openembedded" remote="oe" revision="b40116cf457b88a2db14b86fda9627fb34d56ae6" />
-
-	<!-- commit frozen from branch 1.32  -->
-	<project path="oe/bitbake" name="bitbake" remote="oe" revision="7c9370f7fafc98e4c836255e72ff8acff1138997" />
-
-	<project path="meta-mender" name="mendersoftware/meta-mender" remote="github" revision="c3b1b465ce3a27fc7b03a6b7ef596348835cff57" />
-
-	<!-- commit frozen from master on 12.10.2017. -->
-	<project path="meta-go" name="mem/oe-meta-go" remote="github" revision="514b2a80a2a4235687e92fb28328bb3e7c2d6c74" />
+	<project path="oe" name="openembedded-core" remote="oe" revision="rocko" />
+	<project name="meta-openembedded" remote="oe" revision="rocko" />
+	<project path="oe/bitbake" name="bitbake" remote="oe" revision="1.36" />
 </manifest>
