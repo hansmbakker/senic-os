@@ -15,7 +15,6 @@ IMAGE_INSTALL = " \
   openssl \
   lighttpd \
   os-release \
-  glibc-locale \
   glibc-utils \ 
   networkmanager \
   ntp \
