@@ -78,7 +78,6 @@ IMAGE_INSTALL = " \
   python3-zeroconf \
   python3-zope.deprecation \
   python3-zope.interface \
-  hub-configuration \
   senic-hub-button \
   e2fsprogs-resize2fs \
   parted \
