@@ -17,7 +17,7 @@ Debugging
 ---------
 
 Run ``bitbake -c do_rootfs senic-os-dev`` to trigger a build.
-Then you can check ``tmp-glibc/work/senic_hub_beta-oe-linux-gnueabi/senic-os-dev/1.0-r0/rootfs/`` and inspect what the filesystem looks like.
+Then you can check ``tmp-glibc/work/senic_hub-senic-linux-gnueabi/senic-os-dev/1.0-r0/rootfs/`` and inspect what the filesystem looks like.
 In many cases this is enough and you can save yourself the trouble of writing the image to disk and physically boot into it.
 
 To mount the finished image directly on the build host (i.e. to avoid downloading, burning and booting it) in situations where it's not enough to inspect the rootfs (i.e. when debugging the partitioning layout).

@@ -34,7 +34,6 @@ DEPENDS_${PN} = "\
   python3-pbkdf2 \
   python3-phue \
   python3-pip \
-  python3-pip \
   python3-plaster \
   python3-pydoc \
   python3-pygobject \
@@ -80,24 +79,13 @@ inherit logging
 inherit useradd
 inherit deploy
 
-
 USERADD_PACKAGES = "${PN}"
 USERADD_PARAM_${PN} = "-U -d ${SNC_BACKEND_DEPLOY_LOCATION} ${SNC_RUNTIME_USER}"
 
-
-do_configure[deptask] = "do_install"
-
-python do_compile() {
-  render_template('supervisor_senic_hub.conf')
-  render_template('supervisor_bluenet.conf')
-  render_template('supervisor_netwatch.conf')
-  render_template('supervisor_nuimo_app.conf')
-  render_template('supervisor_device_discovery.conf')
-  render_template('production.ini')
-  render_template('locales.sh')
-}
-
 do_install() {
+    install -m 0755 -o ${SNC_BUILD_USER} -g ${SNC_RUNTIME_USER} -d ${D}${SNC_BACKEND_DATA_LOCATION}
+    install -m 0755 -o ${SNC_BUILD_USER} -g ${SNC_RUNTIME_USER} -d ${D}${SNC_BACKEND_DATA_LOCATION}/logs
+
     # create and populate the deployment location
     install -m 0755 -o ${SNC_BUILD_USER} -g ${SNC_RUNTIME_USER} -d ${D}${SNC_BACKEND_DEPLOY_LOCATION}
 
@@ -115,24 +103,18 @@ do_install() {
     # global system configuration
     install -m 0755 -d ${D}${sysconfdir}/profile.d/
     install -m 0644 ${WORKDIR}/locales.sh ${D}${sysconfdir}/profile.d/locales.sh
-    # Make NetworkManager settings point to data partition
-    install -m 0755 -d ${D}${sysconfdir}/NetworkManager
-    ln -sf /data/senic-hub/etc/NetworkManager/system-connections ${D}${sysconfdir}/NetworkManager/system-connections
-
 }
 
 do_deploy() {
     # populate the data partition
     install -m 0755 -d ${DEPLOYDIR}/hub-data/senic-hub
     install -m 0755 --d ${DEPLOYDIR}/hub-data/senic-hub/logs
-    # Create location for network manager connections
-    install -m 0755 -d ${DEPLOYDIR}/hub-data/senic-hub/etc/NetworkManager/system-connections
 }
 
 addtask do_deploy after do_compile before do_build
 
-
 FILES_${PN} = "\
+    ${SNC_BACKEND_DATA_LOCATION} \
     ${SNC_BACKEND_DEPLOY_LOCATION} \
     ${sysconfdir}/senic_hub.ini \
     ${sysconfdir}/supervisor/conf.d/senic_hub.conf \
@@ -141,5 +123,4 @@ FILES_${PN} = "\
     ${sysconfdir}/supervisor/conf.d/nuimo_app.conf \
     ${sysconfdir}/supervisor/conf.d/device_discovery.conf \
     ${sysconfdir}/profile.d/locales.sh \
-    ${sysconfdir}/NetworkManager/system-connections \
 "
