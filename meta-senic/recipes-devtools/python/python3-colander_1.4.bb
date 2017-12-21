@@ -5,5 +5,5 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 inherit setuptools3
 inherit pypi
 
-SRC_URI[md5sum] = "f5d783768c51d73695f49bbe95778ab4"
+SRC_URI[md5sum] = "cbb8e403c2ba05aeaa419d51fdb93736"
 
