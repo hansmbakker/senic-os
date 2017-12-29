@@ -25,4 +25,5 @@ IMAGE_INSTALL += " \
 	lmsensors-sensorsdetect \
 	lmsensors-fancontrol \
 	bootstrap-ansible \
+	binutils \
 "
