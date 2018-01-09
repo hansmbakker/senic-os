@@ -41,12 +41,12 @@ IMAGE_INSTALL = " \
   python3-hupper \
   python3-idna \
   python3-iso8601 \
-  python3-lightify \
   python3-monotonic \
   python3-multiprocessing \
   python3-netdisco \
   python3-netifaces \
   python3-python-networkmanager \
+  python3-lightify \
   python3-nuimo \
   python3-pastedeploy \
   python3-pbkdf2 \
