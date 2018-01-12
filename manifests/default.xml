@@ -6,4 +6,5 @@
 	<project path="oe" name="openembedded-core" remote="oe" revision="rocko" />
 	<project name="meta-openembedded" remote="oe" revision="rocko" />
 	<project path="oe/bitbake" name="bitbake" remote="oe" revision="1.36" />
+	<project path="meta-mender" name="mendersoftware/meta-mender" remote="github" revision="rocko" />
 </manifest>
