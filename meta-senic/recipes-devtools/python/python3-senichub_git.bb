@@ -12,7 +12,7 @@ RPROVIDES_${PN} += "python3-senic-hub"
 
 S = "${WORKDIR}/git"
 SRC_URI = "git://github.com/getsenic/senic-hub.git;"
-SRCREV = "8123a2bbb72e5586a49a5e71d48939997f3e2df8"
+SRCREV = "01fd5bd8725add5e73d3cc35a169f0dc837daefa"
 PV = "git-${SRCPV}"
 
 RDEPENDS_${PN} = "python3-nuimo python3-lightify"
