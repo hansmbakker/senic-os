@@ -83,9 +83,6 @@ USERADD_PACKAGES = "${PN}"
 USERADD_PARAM_${PN} = "-U -d ${SNC_BACKEND_DEPLOY_LOCATION} ${SNC_RUNTIME_USER}"
 
 do_install() {
-    install -m 0755 -o ${SNC_BUILD_USER} -g ${SNC_RUNTIME_USER} -d ${D}${SNC_BACKEND_DATA_LOCATION}
-    install -m 0755 -o ${SNC_BUILD_USER} -g ${SNC_RUNTIME_USER} -d ${D}${SNC_BACKEND_DATA_LOCATION}/logs
-
     # create and populate the deployment location
     install -m 0755 -o ${SNC_BUILD_USER} -g ${SNC_RUNTIME_USER} -d ${D}${SNC_BACKEND_DEPLOY_LOCATION}
 
@@ -114,7 +111,6 @@ do_deploy() {
 addtask do_deploy after do_compile before do_build
 
 FILES_${PN} = "\
-    ${SNC_BACKEND_DATA_LOCATION} \
     ${SNC_BACKEND_DEPLOY_LOCATION} \
     ${sysconfdir}/senic_hub.ini \
     ${sysconfdir}/supervisor/conf.d/senic_hub.conf \

@@ -42,6 +42,18 @@ PACKAGECONFIG_append_pn-nativesdk-qemu = " sdl"
 # this doesn't mean anything to you.
 CONF_VERSION = "1"
 
+# For Mender integration
+#
+MENDER_ARTIFACT_NAME = "v${DISTRO_VERSION}"
+# we exceed the default size, so we must set it explicitly
+MENDER_STORAGE_TOTAL_SIZE_MB = "1036"
+# squeeze some more size by reducing the data partition
+MENDER_DATA_PART_SIZE_MB = "10"
+MENDER_DATA_PART_DIR_append = " ${DEPLOY_DIR_IMAGE}/hub-data"
+MENDER_UPDATE_POLL_INTERVAL_SECONDS = "60"
+MENDER_INVENTORY_POLL_INTERVAL_SECONDS = "60"
+MENDER_TENANT_TOKEN = ""
+
 # hub specific variables
 #
 
