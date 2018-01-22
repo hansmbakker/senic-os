@@ -51,6 +51,7 @@ IMAGE_INSTALL = " \
   python3-pastedeploy \
   python3-pbkdf2 \
   python3-phue \
+  python-pip \
   python3-pip \
   python3-plaster \
   python3-pygobject \
