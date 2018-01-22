@@ -1,5 +1,5 @@
-setenv fdtfile zImage-sun8i-h3-senic-hub.dtb
-setenv bootargs console=${console} root=/dev/mmcblk0p2 rootwait panic=10 ${extra}
-load mmc 0:1 ${fdt_addr_r} ${fdtfile} || load mmc 0:1 ${fdt_addr_r} boot/${fdtfile}
-load mmc 0:1 ${kernel_addr_r} zImage || load mmc 0:1 ${kernel_addr_r} boot/zImage || load mmc 0:1 ${kernel_addr_r} uImage || load mmc 0:1 ${kernel_addr_r} boot/uImage
-bootz ${kernel_addr_r} - ${fdt_addr_r} || bootm ${kernel_addr_r} - ${fdt_addr_r}
+setenv fdtfile boot/sun8i-h3-senic-hub.dtb
+setenv bootargs 'console=${console} root=${mender_kernel_root} rootwait panic=10 ${extra}'
+setenv mmcboot 'load ${mender_uboot_root} ${fdt_addr_r} ${fdtfile}; load ${mender_uboot_root} ${kernel_addr_r} boot/zImage; bootz ${kernel_addr_r} - ${fdt_addr_r}'
+setenv bootcmd 'run mender_setup; run mmcboot'
+boot
