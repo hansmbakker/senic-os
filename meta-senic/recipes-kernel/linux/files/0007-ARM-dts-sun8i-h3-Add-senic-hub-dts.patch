@@ -1,9 +1,39 @@
+From 0fd183773fc76af8ab4a031e37e9dd552f8239a6 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Myl=C3=A8ne=20Josserand?=
+ <mylene.josserand@free-electrons.com>
+Date: Tue, 23 Jan 2018 15:47:53 +0100
+Subject: [PATCH] ARM: dts: sun8i-h3: Add senic-hub dts
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Add device tree for Senic Hub.
+
+Signed-off-by: Mylène Josserand <mylene.josserand@free-electrons.com>
+---
+ arch/arm/boot/dts/Makefile               |   1 +
+ arch/arm/boot/dts/sun8i-h3-senic-hub.dts | 211 +++++++++++++++++++++++++++++++
+ 2 files changed, 212 insertions(+)
+ create mode 100644 arch/arm/boot/dts/sun8i-h3-senic-hub.dts
+
+diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+index eff87a344566..8d362957f661 100644
+--- a/arch/arm/boot/dts/Makefile
++++ b/arch/arm/boot/dts/Makefile
+@@ -930,6 +930,7 @@ dtb-$(CONFIG_MACH_SUN8I) += \
+ 	sun8i-h3-orangepi-pc-plus.dtb \
+ 	sun8i-h3-orangepi-plus.dtb \
+ 	sun8i-h3-orangepi-plus2e.dtb \
++	sun8i-h3-senic-hub.dtb \
+ 	sun8i-r16-bananapi-m2m.dtb \
+ 	sun8i-r16-parrot.dtb \
+ 	sun8i-v3s-licheepi-zero.dtb \
 diff --git a/arch/arm/boot/dts/sun8i-h3-senic-hub.dts b/arch/arm/boot/dts/sun8i-h3-senic-hub.dts
 new file mode 100644
-index 000000000000..ac93c1fdc595
+index 000000000000..e43221e9238e
 --- /dev/null
 +++ b/arch/arm/boot/dts/sun8i-h3-senic-hub.dts
-@@ -0,0 +1,204 @@
+@@ -0,0 +1,211 @@
 +/*
 + * Copyright (C) 2017 Aravinth Panch <aravinth@senic.com>
 + *
@@ -121,6 +151,13 @@ index 000000000000..ac93c1fdc595
 +	status = "okay";
 +};
 +
++&emac {
++	phy-handle = <&int_mii_phy>;
++	phy-mode = "mii";
++	allwinner,leds-active-low;
++	status = "okay";
++};
++
 +&ohci1 {
 +	status = "okay";
 +};
@@ -193,7 +230,7 @@ index 000000000000..ac93c1fdc595
 +
 +&pio {
 +    uart2_pins_rts_cts: uart2_rts_cts {
-+        pins = "PA2", "PA3";  
++        pins = "PA2", "PA3";
 +        function = "uart2";
 +    };
 +};
@@ -208,3 +245,6 @@ index 000000000000..ac93c1fdc595
 +	/* USB VBUS is always on */
 +	status = "okay";
 +};
+-- 
+2.11.0
+
