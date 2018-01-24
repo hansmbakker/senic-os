@@ -1,0 +1,7 @@
+[Unit]
+Description=Enable bt module
+[Service]
+Type=simple
+ExecStart=/usr/bin/enable-bt-module
+[Install]
+WantedBy=multi-user.target bluetooth.service
