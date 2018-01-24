@@ -4,5 +4,4 @@ Description=BTattach the PCA10040 devboard
 Type=simple
 ExecStart=/usr/bin/btattach -B /dev/ttyACM0 -S 115200
 [Install]
-WantedBy=multi-user.target
-
+WantedBy=multi-user.target bluetooth.service
