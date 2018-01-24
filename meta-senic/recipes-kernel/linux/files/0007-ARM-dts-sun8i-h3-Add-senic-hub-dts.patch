@@ -99,27 +99,27 @@ index 000000000000..e43221e9238e
 +	leds {
 +		compatible = "gpio-leds";
 +		pinctrl-names = "default";
-+		pinctrl-0 = <&led_nanopi_blue>, <&led_nanopi_green>, <&led_senic_blue>;
++		pinctrl-0 = <&led_nanopi_blue>, <&led_nanopi_green>, <&led_senic_white>;
 +
 +		/* Blue LED on Nanopi NEO */
 +		nanopi_blue {
 +			label = "nanopi_blue";
 +			gpios = <&pio 0 10 GPIO_ACTIVE_HIGH>;
-+			linux,default-trigger = "heartbeat";
++			default-state = "off";
 +		};
 +
 +		/* Green LED on Nanopi NEO */
 +		nanopi_green {
 +			label = "nanopi_green";
 +			gpios = <&r_pio 0 10 GPIO_ACTIVE_HIGH>;
-+			default-state = "on";
++			default-state = "off";
 +		};
 +
-+		/* Blue LED on Nanopi NEO */
-+		senic_blue {
-+			label = "senic_blue";
-+			gpios = <&pio 6 6 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "heartbeat";
++		/* White LED on Carrier PCB */
++		senic_white {
++			label = "senic_white";
++			gpios = <&pio 0 6 GPIO_ACTIVE_HIGH>;
++			default-state = "on";
 +		};
 +	};
 +
@@ -192,7 +192,7 @@ index 000000000000..e43221e9238e
 +	};
 +
 +	/* Blue LED on Senic Hub Baseboard */
-+	led_senic_blue: led_pins@0 {
++	led_senic_white: led_pins@0 {
 +		allwinner,pins = "PG6";
 +		allwinner,function = "gpio_out";
 +		allwinner,drive = <SUN4I_PINCTRL_10_MA>;
