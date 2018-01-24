@@ -1,8 +1,0 @@
-[Unit]
-Description=Start btattach, needed to enable Bluetooth for some UART-based Bluetooth chipsets
-[Service]
-Type=simple
-ExecStart=/usr/bin/btattach -B /dev/ttyS1 -S 115200
-[Install]
-WantedBy=multi-user.target
-
