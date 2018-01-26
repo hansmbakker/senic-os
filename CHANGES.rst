@@ -1,6 +1,17 @@
 Changelog
 =========
 
+0.1.8 - 2018-01-26
+------------------
+
+* Mender implementation with Hosted mender and signed images 
+* Ethernet working
+* OS support for the dynastream module [bluetooth]
+* Updated to Rocko [BlueZ 5.46]
+* Kernel 4.14
+* Partial porting of the senic Hub stack
+
+
 0.1.7 - 2017-11-22
 ------------------
 
