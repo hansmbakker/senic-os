@@ -1,6 +1,6 @@
 #!/bin/bash
 
 supervisorctl stop all
-find /data/senic-hub/ -type f \! -name "production.ini" | xargs rm
-nmcli --fields NAME con | awk '{if (NR!=1) {print $1}}' | while read -r line ; do nmcli con del $line; done
+find /data/senic-hub/ -type f | xargs rm 1> /dev/null
+nmcli --fields NAME,TYPE con | grep -v -w '802-3-ethernet' | awk '{if (NR!=1) {print $1}}' | while read -r line ; do nmcli con del $line; done
 supervisorctl start all
