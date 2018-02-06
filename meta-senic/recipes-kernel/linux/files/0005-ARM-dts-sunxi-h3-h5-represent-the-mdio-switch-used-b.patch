@@ -13,14 +13,14 @@ Acked-by: Florian Fainelli <f.fainelli@gmail.com>
 Reviewed-by: Andrew Lunn <andrew@lunn.ch>
 Signed-off-by: Maxime Ripard <maxime.ripard@free-electrons.com>
 ---
- arch/arm/boot/dts/sunxi-h3-h5.dtsi | 31 +++++++++++++++++++++++++++----
- 1 file changed, 27 insertions(+), 4 deletions(-)
+ arch/arm/boot/dts/sunxi-h3-h5.dtsi | 32 ++++++++++++++++++++++++++++----
+ 1 file changed, 28 insertions(+), 4 deletions(-)
 
 diff --git a/arch/arm/boot/dts/sunxi-h3-h5.dtsi b/arch/arm/boot/dts/sunxi-h3-h5.dtsi
 index d38282b9e5d4..2721b39c1875 100644
 --- a/arch/arm/boot/dts/sunxi-h3-h5.dtsi
 +++ b/arch/arm/boot/dts/sunxi-h3-h5.dtsi
-@@ -408,11 +408,34 @@
+@@ -408,11 +408,35 @@
  			mdio: mdio {
  				#address-cells = <1>;
  				#size-cells = <0>;
@@ -49,6 +49,7 @@ index d38282b9e5d4..2721b39c1875 100644
 +						reg = <1>;
 +						clocks = <&ccu CLK_BUS_EPHY>;
 +						resets = <&ccu RST_BUS_EPHY>;
++						allwinner,leds-active-low;
 +					};
 +				};
 +
