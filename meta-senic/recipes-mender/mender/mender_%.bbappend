@@ -1,8 +1,9 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
-MENDER_SERVER_URL = "https://hosted.mender.io"
+MENDER_SERVER_URL = "https://mender.senic.com"
 
-SRC_URI += "file://mender-device-identity \
+SRC_URI += "file://server.crt \
+            file://mender-device-identity \
             file://artifact-verify-key.pem"
 
 do_install_append() {
