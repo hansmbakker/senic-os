@@ -1,0 +1,13 @@
+diff --git a/setup.py b/setup.py
+index fe15e58..1dbf5c3 100644
+--- a/setup.py
++++ b/setup.py
+@@ -27,8 +27,6 @@ setup(
+     author="Javier Ruere",
+     author_email="javier@ruere.com.ar",
+     zip_safe=False,
+-    packages=['tests'],
+     py_modules=['multiprocessing_logging'],
+     platforms=["POSIX"],
+-    test_suite="tests",
+ )

@@ -23,6 +23,7 @@ IMAGE_INSTALL = " \
   ntpdate \
   python \
   python-supervisor \
+  python3-multiprocessing-logging \
   python-daemonize \
   python3 \
   python3-asn1crypto \
