@@ -1,6 +1,17 @@
 Changelog
 =========
 
+0.1.9 - 2018-02-07
+------------------
+
+ * Move to single SD card image #91
+ * Bluetooth vanilla onboarding working
+ * Bluetooth surviving restart
+ * Resolve security issues #93
+ * Add hardware testing scripts
+ * Ethernet LEDs not lighted all time
+
+
 0.1.8 - 2018-01-26
 ------------------
 
