@@ -1,6 +1,6 @@
 require senic-os.bb
 
-EXTRA_IMAGE_FEATURES = "debug-tweaks"
+IMAGE_FEATURES = "debug-tweaks"
 
 IMAGE_INSTALL += " \	
 	htop \
