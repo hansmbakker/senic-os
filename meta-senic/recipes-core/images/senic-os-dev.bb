@@ -24,7 +24,6 @@ IMAGE_INSTALL += " \
 	lmsensors-pwmconfig \
 	lmsensors-sensorsdetect \
 	lmsensors-fancontrol \
-	bootstrap-ansible \
 	binutils \
 	tcpdump \
 "
