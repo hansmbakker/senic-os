@@ -1,6 +1,6 @@
 require senic-os.bb
 
-EXTRA_IMAGE_FEATURES = "debug-tweaks"
+IMAGE_FEATURES = "debug-tweaks"
 
 IMAGE_INSTALL += " \	
 	htop \
@@ -24,7 +24,6 @@ IMAGE_INSTALL += " \
 	lmsensors-pwmconfig \
 	lmsensors-sensorsdetect \
 	lmsensors-fancontrol \
-	bootstrap-ansible \
 	binutils \
 	tcpdump \
 "
