@@ -8,11 +8,6 @@ if [ "$1" == "--h" ]; then
     echo "Usage: `basename $0`"
     echo ""
     echo "For wifi tests, you need to set and export SSID_NAME and SSID_PASSWORD environment variables."
-    echo "Results are written to results.txt file."
-    echo "Each row has results for a interface identified by first character."
-    echo "w for wifi, b for bluetooth, l for led test."
-    echo "F indicates Failure, P being Pass."
-    echo "Sequence of tests are documented in respective shell scripts."
     echo ""
     exit 0
 fi
@@ -27,18 +22,25 @@ while true; do
         LED_TEST="P"
         break;;
     [Nn]* )
-        echo " Failed the LED test"
+        echo " Failed LED test"
         break;;
     * )
         echo " Please answer y/n.";;
     esac
 done
 
-echo "l:$LED_TEST" > results.txt
-
+echo "$LED_TEST" > results.txt
 dir=$(dirname "$0")
 
 /bin/bash "$dir/bluetooth_test.sh"
 /bin/bash "$dir/wifi_test.sh"
-cat /proc/cpuinfo | grep Serial | cut -d' ' -f2 | qrencode -t ANSI256 -l H
-cat results.txt
+
+
+HW_FAILS="$(cat results.txt | grep F | wc -l)"
+if [ $HW_FAILS -gt 0 ]; then
+    echo -e "\033[1m************************************************************************\033[0m"
+    echo -e "\033[1m Failed Hardware tests. \033[0m"
+    echo -e "\033[1m************************************************************************\033[0m"
+else
+    cat /proc/cpuinfo | grep Serial | cut -d' ' -f2 | qrencode -t ANSI256 -l H
+fi
