@@ -7,6 +7,8 @@ IMAGE_BOOT_FILES = "zImage zImage-${KERNEL_DEVICETREE} boot.scr"
 
 IMAGE_FEATURES = "empty-root-password"
 
+IMAGE_NAME = "${IMAGE_BASENAME}-${MACHINE}-${DISTRO_VERSION}-${DATETIME}"
+
 IMAGE_INSTALL = " \
   ${@bb.utils.contains("DISTRO_FEATURES", "bluetooth", "bluez5-noinst-tools", "", d)} \
   ${@bb.utils.contains("DISTRO_FEATURES", "wifi", "linux-firmware-mediatek", "",d)} \	
