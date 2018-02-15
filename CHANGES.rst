@@ -1,15 +1,24 @@
 Changelog
 =========
 
+0.2.0 - 2018-02-15
+------------------
+
+* Remove unused HA variables in production.ini
+* Allow passwordless root access on dev images
+* Unused code removed from senic-hub [python] codebase
+* Single Nuimo reconnects after long period of no connection
+* Image files containing versions in file names
+
 0.1.9 - 2018-02-07
 ------------------
 
- * Move to single SD card image #91
- * Bluetooth vanilla onboarding working
- * Bluetooth surviving restart
- * Resolve security issues #93
- * Add hardware testing scripts
- * Ethernet LEDs not lighted all time
+* Move to single SD card image #91
+* Bluetooth vanilla onboarding working
+* Bluetooth surviving restart
+* Resolve security issues #93
+* Add hardware testing scripts
+* Ethernet LEDs not lighted all time
 
 
 0.1.8 - 2018-01-26
