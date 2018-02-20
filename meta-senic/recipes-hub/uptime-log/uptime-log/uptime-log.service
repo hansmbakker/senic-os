@@ -1,0 +1,9 @@
+[Unit]
+Description=Runs a command that writes the output of uptime to a file every 10 seconds.
+
+[Service]
+ExecStart=/bin/bash -c "while true; do uptime >> /data/senic-hub/logs/loadavg.log; sleep 10; done"
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
