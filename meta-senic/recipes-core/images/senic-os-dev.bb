@@ -26,4 +26,5 @@ IMAGE_INSTALL += " \
 	lmsensors-fancontrol \
 	binutils \
 	tcpdump \
+	uptime-log \
 "
