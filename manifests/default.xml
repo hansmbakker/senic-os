@@ -3,8 +3,9 @@
 	<remote name="oe" fetch="git://git.openembedded.org/" />
 	<remote name="github" fetch="git://github.com/" />
 
-	<project path="oe" name="openembedded-core" remote="oe" revision="rocko" />
-	<project name="meta-openembedded" remote="oe" revision="rocko" />
-	<project path="oe/bitbake" name="bitbake" remote="oe" revision="1.36" />
-	<project path="meta-mender" name="mendersoftware/meta-mender" remote="github" revision="rocko" />
+	// All repos follow Rocko 2.4.x releases
+	<project path="oe" name="openembedded-core" remote="oe" revision="112c6e77a81ec748cd116d1088dae2a1f59643f5" />
+	<project path="meta-openembedded" name="meta-openembedded" remote="oe" revision="a65c1acb1822966c3553de9fc98d8bb6be705c4e" />
+	<project path="oe/bitbake" name="bitbake" remote="oe" revision="686a230d48ca666bdc0b0565f8e55cc890b90c5f" />
+	<project path="meta-mender" name="mendersoftware/meta-mender" remote="github" revision="94ef411f978fc1e34675cf4734d52fbfe1e0d92f" />
 </manifest>
