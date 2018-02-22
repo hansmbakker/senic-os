@@ -44,7 +44,7 @@ CONF_VERSION = "1"
 
 # For Mender integration
 #
-MENDER_ARTIFACT_NAME = "v${DISTRO_VERSION}"
+MENDER_ARTIFACT_NAME = "${DISTRO_VERSION}"
 # we exceed the default size, so we must set it explicitly
 MENDER_STORAGE_TOTAL_SIZE_MB = "1036"
 # squeeze some more size by reducing the data partition
