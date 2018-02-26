@@ -71,5 +71,4 @@ SNC_DEVPI_INDEX = "root/pypi"
 SNC_NTP_HOST = "pool.ntp.org"
 
 # Sentry endpoint for exception logging
-# TODO: provide a way for the user to opt-in for the production release!
-SNC_SENTRY_DSN = "https://2601699ddeb64448bd4499a57a8887b8:9db76c84b3ca415290bf952197ab9739@sentry.io/179864"
+SNC_SENTRY_DSN = ""
