@@ -8,7 +8,7 @@ inherit setuptools3
 
 S = "${WORKDIR}/git"
 SRC_URI = "git://github.com/getsenic/senic-hub.git;"
-SRCREV = "3187482eb38fd02f2e85b1d4df71c8f82d578b1c"
+SRCREV = "2fe388bba506add4630353f3add75c65221cf26c"
 PV = "git-${SRCPV}"
 
 RDEPENDS_${PN} = "python3-nuimo python3-lightify"
