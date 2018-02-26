@@ -90,4 +90,5 @@ IMAGE_INSTALL = " \
   parted \
   enable-bt-module-systemd \
   initscripts \
+  sonos-test-sound \
 "
